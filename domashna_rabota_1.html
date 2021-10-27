@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="Zadacha1.css">
+    <title> Domashna rabota 1 </title>
+</head>
+
+<body >
+<h1 id="text1"> Dado Tea Lunch Special </h1>
+
+<p> Monday through Friday </p>
+<p> 11am - 3pm </p>
+<p> $9.95 plus tax </p>
+
+<p> Includes sandwich, snack, and drink. </p>
+
+
+<form method="post" action="https://www.bk.com/">
+    <fieldset id="fieldset">
+        <legend><em>Order Information</em></legend>
+        <p><label><strong>Name</strong></label></p>
+        <p><input type="text" name="name" size="25" maxlength="30"></p>
+
+        <p><input name="food" type="radio" value="here">
+            <label>Here</label></p>
+
+        <p><input name="food" type="radio" value="to go"> <label> To go</label></p>
+    </fieldset>
+
+    <fieldset>
+        <legend><em>Sandwiches</em></legend>
+        <p><label><strong>Monday</strong></label></p>
+        <p><input type="radio" name="Monday" value="value">
+            <label>Tomato Mozzarella</label></p>
+        <p><input type="radio" name="Monday" value="value">
+            <label>Chicken Salad</label></p>
+
+        <p><label><strong>Tuesday</strong></label></p>
+        <p><input type="radio" name="Tuesday" value="value">
+            <label>Greek Salad Wrap</label></p>
+        <p><input type="radio" name="Tuesday" value="value">
+            <label>Toto Wrap</label></p>
+
+        <p><label><strong>Wednesday</strong></label></p>
+        <p><input type="radio" name="Wednesday" value="value">
+            <label>Red Pepper Hummus</label></p>
+        <p><input type="radio" name="Tuesday" value="value">
+            <label>Roasted Turkey</label></p>
+
+        <p><label><strong>Thursday</strong></label></p>
+        <p><input type="radio" name="Thursday" value="value">
+            <label>Carrot-Ginger Hummus Wrap</label></p>
+        <p><input type="radio" name="Thursday" value="value">
+            <label>Egg Salad</label></p>
+
+        <p><label><strong>Friday</strong></label></p>
+        <p><input type="radio" name="Friday" value="value">
+            <label>Dado Wrap</label></p>
+        <p><input type="radio" name="Friday" value="value">
+            <label>Tuna Salad</label></p>
+
+
+        <hr>
+        <p><input name="gluten" type="checkbox" value="value">
+            <label> Gluten Free Bread (75c extra)</label></p>
+    </fieldset>
+
+    <fieldset>
+        <legend><em>Snack</em></legend>
+        <p><label><strong>Snacks</strong></label></p>
+        <p><input type="radio" name="snacks" value="value">
+            <label>Apple</label></p>
+        <p><input type="radio" name="snacks" value="value">
+            <label>Banana</label></p>
+        <p><input type="radio" name="snacks" value="value">
+            <label>Potato Chips</label></p>
+    </fieldset>
+
+    <fieldset>
+        <legend><em>Drink</em></legend>
+        <p><label><strong>Drinks</strong></label></p>
+        <select name="drink">
+            <option selected>Hot Black Tea-Keemun</option>
+            <option>Coca Cola</option>
+            <option>Coca Cola Zero</option>
+            <option>Tea</option>
+            <option>Water</option>
+        </select>
+        </label>
+        <hr>
+
+        <p><input name="extra" type="checkbox" value="value">
+            <label> Large drink (75c extra)</label></p>
+    </fieldset>
+
+  <p id="p2">
+   <input id=kopche type="submit" value="Place Order"></p>
+</form>
+</body>
+
+</html>

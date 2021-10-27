@@ -1,0 +1,11 @@
+#body1{background-image: url('slika1.jpg'); background-repeat: no-repeat; background-attachment: fixed; 
+    background-size: 100% 100%;}
+h1{font-size:25pt;font-family: tahoma,helvetica,sans-serif;color: white;}
+nav ul{display:flex; align-items: right; justify-content:right;}
+nav ul li { list-style: none; width: 8em;}
+nav ul li:hover {text-decoration: underline;}
+nav ul li a { text-decoration: none; color:white }
+
+p{font-size:32px; font-family: tahoma,helvetica,sans-serif;color:black;font-weight: bold;position:absolute; top:38%;left:50%;transform:translate(-50%,-50%);}
+p1{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:black;position:absolute; top:49%;;text-align:center;left:10%;right:10%;}
+p2{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:white;font-weight: bold;position:absolute; left:1%;}

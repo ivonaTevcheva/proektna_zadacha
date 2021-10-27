@@ -1,0 +1,24 @@
+#body1{background-color:pink;}
+h1{font-size:25pt;font-family: tahoma,helvetica,sans-serif;color: white;}
+nav ul{display:flex; align-items: right; justify-content:right;}
+nav ul li { list-style: none; width: 8em;}
+nav ul li:hover {text-decoration: underline;}
+nav ul li a { font-size:15pt;text-decoration: none; color:white }
+
+p1{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:black;position:absolute; top:49%;;text-align:center;left:10%;right:10%;}
+p2{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:white;font-weight: bold;position:absolute; left:1%;}
+.slika{  display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    }
+
+
+
+
+
+
+
+
+
+
