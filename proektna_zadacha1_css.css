@@ -11,7 +11,7 @@ p1{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:black;position
 p2{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:white;font-weight: bold;position:absolute; left:2%;top:2%;}
 p3{font-size:20px; font-family: tahoma,helvetica,sans-serif;color:white;position:absolute; top:60%;;text-align:center;left:10%;right:10%;background-color:#333; width: 75%;}
 p4{font-size:32px; font-family: tahoma,helvetica,sans-serif;color:black;position:absolute; left:40%;right:40%; top:15%;}
-
+p.contact{font-family: tahoma,helvetica,sans-serif;color:red;font-weight: bolder;font-size: 130%;}
 /* Navbar container */
 .navbar {
     overflow: hidden;
