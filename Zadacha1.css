@@ -1,6 +1,0 @@
-body{background-color:linen;}
-em { font-size:13pt; font-weight: bold; color: rgb(170, 28, 116);}
-h1{ margin-left: 40px; font-family: tahoma,helvetica,sans-serif; text-shadow: 2px 2px  2px dimgrey; text-align: center;  color: rgb(170, 28, 116);}
-p{font-size:10pt; font-family:arial, sans-serif;}
-fieldset{border:4px solid rgb(93, 240, 93); border-radius:6px}
-#kopche{background-color:rgb(170, 28, 116);color: white;padding: 7px;text-align:center;font-family: Calibri,SansSerif;font-size: x-large;font-weight: bold;transition-duration: 0.4s;}
