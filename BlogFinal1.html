@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="proektna.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src = "javascript.js"></script>
+
+<link rel="stylesheet" href="app.css">
+
+<title>Proektna zadacha</title>
+</head>
+
+<body id="body3">
+    <p class="special">ИВОНА ТЕВЧЕВА</p>
+  
+      <div class="navbar">
+          <a href="Contact.html">Контакт</a>
+          <div class="dropdown">
+            <button class="dropbtn">За Вас
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="anketa.html">Анкета</a>
+              <a href="Quiz.html">Квиз</a>
+            </div>
+          </div>
+          <a href="BlogFinal1.html">Блог</a>
+          <a href="Galerija.html">Галерија</a>
+          <div class="dropdown">
+            <button class="dropbtn">Омилени нешта
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="Movies.html">Филмови, серии, музика</a>
+              <a href="Food.html">Храна</a>
+            </div>
+            </div>
+          <a href="Home.html">Дома</a>
+        </div>
+      </div>
+
+      <script>
+    
+        function start(){
+          var current = new Date();
+          document.getElementById("getMethods").innerHTML = "<p>Дата: " + current.getDate() + "." + current.getMonth() + "." + current.getFullYear() + "</p>" + "<p>Час: " + current.getHours() + ":" + current.getMinutes() + "</p>";
+        }
+        window.addEventListener("load", start, false);
+    
+    
+        function reset() {
+                     document.getElementById("form").reset();}
+          var name;
+          var now = new Date();
+          var hour = now.getHours();
+          if(hour < 12)
+            document.write("<h3> Добро утро! </h3>");
+          if(hour >= 12){
+            hour = hour - 12;
+            if(hour<6)
+              document.write("<h3> Добар ден! </h3>");
+            if (hour >= 6)
+              document.write("<h3> Добра вечер! </h3>");
+          }
+    
+          function myFunction() {
+            var x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML = x;
+          }
+      </script>
+  
+      <h1>Блог</h1>
+
+
+    <div>
+        <input id="blogSbj" type="text" name="usrname" placeholder="Наслов" class="pos"><br><br>
+        <center>
+            <textarea style="margin-left: -1.6%;"rows="14" cols="100" placeholder="Вашиот текст тука..." id="blogTxt"></textarea>
+        </center>
+        <form onsubmit="blogPost()" id="blog-form"><br>
+            <input class="pos" id="blogAlias" type="text" name="usrname" placeholder="Автор"><br><br>
+            <button class="pos" id="submit" type="submit">Постирај</button>
+        </form><br>
+        <center>
+            <input class="stil2" type="number" id="postNumber" placeholder="Број на пост"><br>
+            <button class="stil" onClick="handleDelete()" style="width: 11%;
+            margin-top: 1px;">Избриши</button>
+        </center>
+    </div>
+    <center>
+        <div style="width: 50%; background-color: pink;" id="submittedDiv">
+    </center>
+    </div>
+
+
+    <script>
+        function blogPost() {
+            event.preventDefault()
+            let blogTxt = document.getElementById("blogTxt").value
+            let blogAlias = document.getElementById("blogAlias").value
+            let blogSbj = document.getElementById("blogSbj").value
+            let submittedDiv = document.getElementById("submittedDiv")
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            let htmlString = "<h2 style=\"background-color:whitesmoke;\"id='subject'> Наслов: " + blogSbj + "</h2>" + '<p id="content" style="word-wrap: break-word; text-align:left">' + blogTxt + "</p>" + " <b><p style=\"text-align:left\"id='ime'> Напишано од: " + blogAlias + "</p></b>"
+            posts.push(htmlString)
+            localStorage.setItem('posts', JSON.stringify(posts))
+            let newString = "";
+            posts.forEach(element => {
+                newString += element
+                newString += "<hr>"
+            });
+            submittedDiv.innerHTML = newString
+            console.log("posts = " + posts)
+        }
+        const handleDelete = () => {
+            const postId = document.getElementById("postNumber").value;
+            console.log("postNumber:" + postId);
+            let posts = JSON.parse(localStorage.getItem('posts')) || [];
+            if (posts.length === 0) {
+                window.alert("Нема постови на блогот! Нема што да се избрише")
+                return;
+            }
+            if (postId > posts.length || postId < 1) {
+                window.alert("Внесен е погрешен број! Постот не постои.")
+                return;
+            }
+            posts.splice(postId - 1, 1);
+            let tempString = "";
+            posts.forEach(element => {
+                tempString += element
+                tempString += "<hr>"
+            })
+            console.log("posle foreach");
+            localStorage.setItem('posts', JSON.stringify(posts));
+            document.getElementById("submittedDiv").innerHTML = tempString;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="proektna.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src = "javascript.js"></script>
+
+
+<title>Proektna zadacha</title>
+</head>
+<body id="body1">
+  <p class="special">ИВОНА ТЕВЧЕВА</p>
+
+    <div class="navbar">
+        <a href="Contact.html">Контакт</a>
+        <div class="dropdown">
+            <button class="dropbtn">За Вас
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="anketa.html">Анкета</a>
+              <a href="Quiz.html">Квиз</a>
+            </div>
+          </div>
+        <a href="BlogFinal1.html">Блог</a>
+        <a href="Galerija.html">Галерија</a>
+        <div class="dropdown">
+          <button class="dropbtn">Омилени нешта
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="Movies.html">Филмови, серии, музика</a>
+            <a href="Food.html">Храна</a>
+          </div>
+        </div>
+        <a href="Home.html">Дома</a>
+      </div>
+    
+    </div>
+
+    <script type="text/javascript">
+        var name;
+       name=window.prompt("Внесете го вашето име овде");
+       document.writeln("<h1> Анкета на " + name + " </h1>");
+       </script>
+
+    <p class="nodec">Пополнете ја оваа анкета со цел подобрување на веб страната</p>
+    <form method="post" action="anketa.html">
+        <p>
+            <label>Име:
+                <input name="name" type="text" size="10" maxlength="20" onfocus="myFunction(this)">
+            </label>
+        </p>
+
+        <p>
+            <label>Презиме:
+                <input name="name" type="text" size="10" maxlength="20" onfocus="myFunction(this)">
+            </label>
+        </p>
+        <label>Пол</label>
+        <select name="gender">
+            <option value="male">Mашки</option>
+            <option value="female">Женски</option>
+            <option value="other">Друго</option>
+        </select>
+
+        <p>
+            <label>Возраст</label>
+            <input type="number" name="Age" value="20">
+            </p>
+
+        <p>
+            <label>Датум и време:
+               <input type = "datetime-local" /> 
+            </label>
+         </p>
+
+        <h2>Како Ви се допадна страната?</h2> 
+    <input type="checkbox" >
+    <label for="vehicle1">Одлично</label><br>
+
+    <input type="checkbox">
+    <label for="vehicle1">Многу добро</label><br>
+
+    <input type="checkbox" >
+    <label for="vehicle1">Добро</label><br>
+
+    <input type="checkbox" >
+    <label for="vehicle1">Ужас</label><br>
+    <p>
+        <label for="points">Ваша оценка (помеѓу 0 и 10):</label>
+        <input type="range" id="points" name="points" min="0" max="10">
+    </p>
+
+    <h2>Што најмногу Ви се допадна? </h2> 
+    <input type="checkbox" >
+    <label for="vehicle1">Дизајнот на страната</label><br>
+
+    <input type="checkbox">
+    <label for="vehicle1">Боите</label><br>
+
+    <input type="checkbox" >
+    <label for="vehicle1">Омилени нешта</label><br>
+
+    <input type="checkbox" >
+    <label for="vehicle1">Галерија</label><br>
+
+    <input type="checkbox" >
+    <label for="vehicle1">Друго</label><br>
+
+    <p class="clear">
+        <label><h2>Како стигнавте до мојата веб страна? </h2></label>
+
+    </p>
+
+    <p>
+        <label class="special">Пребарувач<input type="radio" name="radio"></label>
+        <label class="special">Предлог од пријател<input type="radio" name="radio"></label>
+        <label class="special">Информација добиена на маил<input type="radio" name="radio"></label>
+        <label class="special">Друго<input type="radio" name="radio"></label>
+    </p>
+    <p>
+        <label><h2>Забелешка:</h2></label>
+        <p>
+        <textarea rows="5" cols="50" placeholder="Внеси коментар"></textarea>
+        </p>
+    </p>
+
+    <button onclick="myFunction1()">Испрати</button>
+        
+
+
+
+    </form>
+    <div class="icons">
+        <a href="https://www.facebook.com/ivona.tevceva"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/tevchevaaaa/"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/ITevceva"><i class="fa fa-twitter"></i></a>
+        <a href="https://github.com/ivonaTevcheva/proektna_zadacha.git"><i class="fa fa-github"></i></a>
+    </div>
+
+    <script>
+        function myFunction(x){
+            x.style.background="lightslategray";
+        }
+    </script>
+    
+</body>
+</html>

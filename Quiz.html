@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Proektna zadacha</title>
+<link rel="stylesheet" type="text/css" href="proektna.css">
+<script src = "javascript.js"></script>
+
+        </head>
+
+        <body id="kviz">
+          <p class="special">ИВОНА ТЕВЧЕВА</p>
+        
+            <div class="navbar">
+                <a href="Contact.html">Контакт</a>
+                <div class="dropdown">
+                    <button class="dropbtn">За Вас
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="anketa.html">Анкета</a>
+                      <a href="Quiz.html">Квиз</a>
+                    </div>
+                  </div>
+                <a href="BlogFinal1.html">Блог</a>
+                <a href="Galerija.html">Галерија</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Омилени нешта
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="Movies.html">Филмови, серии, музика</a>
+                    <a href="Food.html">Храна</a>
+                  </div>
+                </div>
+                <a href="Home.html">Дома</a>
+              </div>
+            </div>
+
+            <br/><br/><br/><br/>       
+   
+        <div class="grid">
+            <div id="quiz">
+                <h2 id="Quiz">Квиз</h2>
+                <hr style="margin-bottom: 20px">
+     
+                <p id="question"></p>
+     
+                <div class="buttons">
+                    <button id="btn0"><span id="choice0"></span></button>
+                    <button id="btn1"><span id="choice1"></span></button>
+                    <button id="btn2"><span id="choice2"></span></button>
+                    <button id="btn3"><span id="choice3"></span></button>
+                </div>
+     
+                <hr style="margin-top: 50px">
+                <footer>
+                    <p id="progress">Прашање x oд y</p>
+                </footer>
+            </div>
+        </div>
+    
+  <body>
+    <script>
+    function Quiz(questions) {
+        this.score = 0;
+        this.questions = questions;
+        this.questionIndex = 0;
+    }
+     
+    Quiz.prototype.getQuestionIndex = function() {
+        return this.questions[this.questionIndex];
+    }
+     
+    Quiz.prototype.guess = function(answer) {
+        if(this.getQuestionIndex().isCorrectAnswer(answer)) {
+            this.score++;
+        }
+     
+        this.questionIndex++;
+    }
+     
+    Quiz.prototype.isEnded = function() {
+        return this.questionIndex === this.questions.length;
+    }
+     
+     
+    function Question(text, choices, answer) {
+        this.text = text;
+        this.choices = choices;
+        this.answer = answer;
+    }
+     
+    Question.prototype.isCorrectAnswer = function(choice) {
+        return this.answer === choice;
+    }
+     
+     
+    function populate() {
+        if(quiz.isEnded()) {
+            showScores();
+        }
+        else {
+            // show question
+            var element = document.getElementById("question");
+            element.innerHTML = quiz.getQuestionIndex().text;
+     
+            // show options
+            var choices = quiz.getQuestionIndex().choices;
+            for(var i = 0; i < choices.length; i++) {
+                var element = document.getElementById("choice" + i);
+                element.innerHTML = choices[i];
+                guess("btn" + i, choices[i]);
+            }
+     
+            showProgress();
+        }
+    };
+     
+    function guess(id, guess) {
+        var button = document.getElementById(id);
+        button.onclick = function() {
+            quiz.guess(guess);
+            populate();
+        }
+    };
+     
+     
+    function showProgress() {
+        var currentQuestionNumber = quiz.questionIndex + 1;
+        var element = document.getElementById("progress");
+        element.innerHTML = "Прашање " + currentQuestionNumber + " од " + quiz.questions.length;
+    };
+     
+    function showScores() {
+        var gameOverHTML = "<h1>Резултат</h1>";
+        gameOverHTML += "<h2 id='score'> Вашите поени: " + quiz.score + "</h2>";
+        var element = document.getElementById("quiz");
+        element.innerHTML = gameOverHTML;
+    };
+     
+   
+    var questions = [
+        new Question("Hyper Text Markup Language претставува?", ["JavaScript", "XHTML","CSS", "HTML"], "HTML"),
+        new Question("Кој јазик се користи за стилизирање на веб-страници?", ["HTML", "JQuery", "CSS", "XML"], "CSS"),
+        new Question("Една од најпопуларните JavaScript библиотеки e?", ["JavaScript", "JQuery","AngularJS", "HTML"], "JQuery"),
+        new Question("Што се користи за поврзување со база на податоци?", ["PHP", "HTML", "JS", "All"], "PHP"),
+        new Question("Во кој HTML елемент го ставаме JavaScript?", ["js", "javascript", "script", "scripting"], "script")
+    ];
+     
+   
+    var quiz = new Quiz(questions);
+     
+ 
+    populate();
+</script>
+
+<br/><br/><br/><br/><br/><br/>
+<p>Види што мислам за твоите резултати</p>
+
+<button id="myBtn">Кликни тука</button>
+
+<script>
+document.getElementById("myBtn").addEventListener("click", myalert);
+
+function myalert() {
+  alert ("Во секој случај, супер си!");
+}
+</script>
+<br/><br/><br/><br/>
+<div class="mt30">
+  <label for="difficulty">Тежина на квизот?</label>
+  <label class="container" style="display: inline; margin-left: 30px;">Лесно
+    <input type="radio" name="radio" id="easy">
+    <span class="checkmark" style="margin-top: 2px;"></span>
+  </label>
+  <label class="container" style="display: inline; margin-left: 30px;">Средно
+    <input type="radio" name="radio" id="medium">
+    <span class="checkmark" style="margin-top: 2px;"></span>
+  </label>
+  <label  class="container" style="display: inline; margin-left: 30px;">Тешко
+    <input type="radio" name="radio" id="hard">
+    <span class="checkmark" style="margin-top: 2px;"></span>
+  </label>
+</div>
+<br/><br/><br/><br/>
+</body>
+
+</html>
